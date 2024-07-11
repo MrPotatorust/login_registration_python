@@ -1,11 +1,13 @@
+#this file is for creating the database and users table in which the values will be stored
+
 import mysql.connector
 
-from setup import user, password
+from setup import *
 
 
 
 db = mysql.connector.connect(
-    host="localhost",
+    host=host_address,
     user=user, 
     password=password 
 )
@@ -16,9 +18,9 @@ mycursor = db.cursor()
 mycursor.execute("CREATE DATABASE users")
 
 db = mysql.connector.connect(
-    host="localhost",
+    host=host_address,
     user=user, 
-    password=password, 
+    password=password,
     database="users"
 )
 

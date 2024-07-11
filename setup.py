@@ -1,4 +1,4 @@
-#first you have to start a mysql server with mysql configurator
+#first you have to setup and start a mysql server with mysql configurator
 #ENTER THESE VALUES BELOW
 #AFTER YOU ENTERED THE VALUES RUN SQL_DATABASE_INIT.PY
 

@@ -40,8 +40,18 @@ def register_user(username, email, password):
     mydb.commit()
 
 
-def login_user(username, email, password):
-    print("ok")
+def login_user(username, password):
+    mycursor.execute(f"SELECT * FROM users WHERE username = '{username}';")
+    user_data = mycursor.fetchone()
+    if user_data is None:
+        print("User not found")
+        return
+    verified_password = hash_password(password, bytes.fromhex(user_data[4]))
+
+    if verified_password.hex() != user_data[3]:
+        print("Wrong password")
+        return
+    print("logged in")
 
 
 
@@ -58,7 +68,7 @@ if register == True:
     register_user(username, email, password)
 
 else:
-    login_user(username, email, password)
+    login_user(username, password)
 
 
 #mycursor.execute("SELECT * FROM users WHERE username = 'Cardinal';")

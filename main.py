@@ -36,13 +36,18 @@ def register_user(username, email, password):
 
     try:
         mycursor.execute(f"INSERT INTO users (username, email, password, salt) VALUES ('{username}', '{email}', '{hashed_password.hex()}', '{salt.hex()}');")
+
     except Exception as e:
+
         if "users.username" in str(e):
+
             print("Username already in use")
         elif "users.email" in str(e):
+
             print("Email already in use")
         else:
             print(e)
+            
     mydb.commit()
 
 

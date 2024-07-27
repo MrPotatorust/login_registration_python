@@ -10,7 +10,7 @@ SETUP:
 2. Run "sql_database_init.py"
 3. Now you can use all the functions by running "Main.py"
 4. In "main.py" lines 76-78 there are the values(email, username, password) that are going to be used
-5. In "main.py" line 82, there is a bool by which python determins if you want to register a user or try to login
+5. In "main.py" line 82, there is a bool by which python determines if you want to register a user or try to login
 
 
 This isn't meant to be a standalone app but its a nice premade code that I will later use in a web app.
